@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, escape
 from funtions import search4letters
+from mysql.connector import connect
 app = Flask(__name__)
 @app.route('/search', methods=['POST'])
 def do_search() -> str:
@@ -19,7 +20,6 @@ def entry_page() -> 'html':
     return render_template('entry.html',
 			    the_title='Welcome to this page')
 def log_request(req: 'flask_request', res: str) -> None:
-    from mysql.connector import connect
     dbconfig = {'host':'127.0.0.1', 'user':'root', 'database':'wordlogdb',}
     conn = connect(**dbconfig)
     cursor = conn.cursor()
@@ -28,13 +28,30 @@ def log_request(req: 'flask_request', res: str) -> None:
     conn.commit()
     cursor.close()
     conn.close()
+
     '''with open('wordsearch.log', 'a') as log:
         print(req.form, req.remote_addr, req.user_agent, res, file= log, sep='|')'''
 
 @app.route('/viewlog')
 def view_the_log() -> 'html':
     contents= []
-    with open('wordsearch.log') as log:
+    dbconfig = {'host':'127.0.0.1', 'user':'root', 'database':'wordlogdb',}
+    conn = connect(**dbconfig)
+    cursor = conn.cursor()
+    _SQL = '''select * from log '''
+    cursor.execute(_SQL)
+    res = cursor.fetchall()
+    for row in res:
+        contents.append([])
+        for item in row:
+            contents[-1].append(item)
+    titles = ('Form Data', 'Remote_addr', 'User_agent', 'Results')
+    return render_template('viewlog.html',
+                            the_title='View Log',
+                            the_row_titles= titles,
+                            the_data= contents,)
+     
+    '''with open('wordsearch.log') as log:
         for line in log: 
             contents.append([])
             for item in line.split('|'): 
@@ -43,6 +60,8 @@ def view_the_log() -> 'html':
     return render_template('viewlog.html',
                             the_title='View Log',
                             the_row_titles= titles,
-                            the_data= contents,)
+                            the_data= contents,)'''
+  
+    
 if __name__ == '__main__':
     app.run(debug=True)
