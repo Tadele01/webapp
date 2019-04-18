@@ -4,6 +4,7 @@ from flask import copy_current_request_context
 from checker import check_logged_in
 from funtions import search4letters
 from threading import Thread
+from time import sleep 
 
 app = Flask(__name__)
 app.config['dbconfig'] = {'host':'127.0.0.1', 'user':'root', 'database':'wordlogdb',}
@@ -25,7 +26,7 @@ def do_search() -> 'html':
     title= 'Here are your results: '
     results= str(search4letters(phrase, letters))
     try:
-        t = Thread(target=log_reques, args=(request, results))
+        t = Thread(target=log_request, args=(request, results))
         t.start()
         
     except Exception as err:
