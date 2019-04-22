@@ -1,0 +1,13 @@
+.card-header{
+    background-color: black;
+    color: white;
+}
+#reportForm{
+    padding-top: 5%;
+}
+
+#submitReport{
+
+    margin-left: 40%;
+    width: 30rem;
+}

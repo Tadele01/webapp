@@ -6,6 +6,8 @@ from funtions import search4letters
 from threading import Thread
 from time import sleep 
 
+
+
 app = Flask(__name__)
 app.config['dbconfig'] = {'host':'127.0.0.1', 'user':'root', 'database':'wordlogdb',}
 

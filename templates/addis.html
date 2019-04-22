@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <head>
+  		<meta charset=" 8-utf">
+  <link rel="stylesheet" href="static/addiss.css" >
+	   <title>
+	     facebook</title>
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	    <link rel="icon" type="png" href="static/images/hack.png"/>
+		<meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/indexCss.html.css">
+    <link rel="stylesheet" href="../css/btnStylesheet.css">
+    <link rel="stylesheet" href="../css/cardStyleSheet.css">
+	    
+  	
+
+  </head>
+  <body>
+  	<div class = "header1">
+  		<div id = "searcharea" class = "header1"><i class="fas fa-search" ></i></div>
+  		<div id = "searcharea" class = "header1"><input placeholder="search here ...." type="text" id="searchbox"/></div>
+  		<div id = "profilearea" class = "header1"><i class="fas fa-user"></i></div>
+
+  		<div id = "profilearea1" class = "header1">profile</div>
+  		<div id = "profilearea3" class = "header1">|</div>
+  		<div id = "profilearea4" class = "header1"><a href="ppp.jpg">Home</a></div>
+  		<div id = "findf" class = "header1"><i class="fas fa-user-friends"></i></div>
+  		<div id = "message" class = "header1"><i class="far fa-bell"></i></div>
+  		<div id = "notfcation" class = "header1"><i class="fas fa-question-circle"></i></div>
+  		<div id = "notfcationarea2" class = "header1">|</div>
+  		<div id = "setteng" class = "header1"><i class="fab fa-facebook-messenger"></i></div>
+  		<div id = "logout" class = "header1"><i class="fas fa-question-circle"></i></div>
+
+
+
+
+
+
+  	</div>
+  	<div class="header0001">
+
+  		
+
+  	</div>
+  	<div class="coverpad"></div>
+  	<div class="coverpadx"><img src="static/images/wow.jpg" width="850px" height="350" /></div>
+  	<div class="profilepic"></div>
+  	<div class="profilepicx"><img src="static/images/pp2.jpg" height="140px"> </div>
+  	<div class="username"> mekdes <br> genetu </div>
+  	<div class="box1">Timeline</div>
+  	<div class="box12">About</div>
+  	<div class="box13">Friends</div>
+  	<div class="box14">photos</div>
+
+    <div class="userpost">
+    <img class="profilepic" src="static/images/fav image.png" Biritu>
+    <div class="time">
+      today 10:30pm
+    </div>
+
+    <div class="parpost">
+     
+      <img src="falseimage.png" alt="">
+    </div>
+    <div class="counter"> 10 likes 7 comment</div>
+  <hr>
+  <div class="cont">
+
+<form method='POST' action='/facebook_request'>
+<input name='phrase' type='TEXT'  value = "The Nairobi-bound Ethiopian Airlines Boeing 737 MAX 8 plane reportedly crashed just 6 minutes after take off from Bole
+        International Airport in Addis Ababa. The captain had reported difficulty and requested for clearance to return to Addis
+        Ababa shortly before the crash. Ethiopian Airlines confirmed via Twitter that all the 149 passengers and 8 crew members
+        who were on board died in the crash. The passengers on the ill-fated plane were from 35 countries." name='phrase' type='TEXT'>
+</textarea>
+ </br> </br> </br> </br>
+<a><input value='like' type='SUBMIT'></a>
+<a><input value='comment' type='SUBMIT'></a>
+<a><input value='share' type='SUBMIT'></a>
+<a><input value='check' type='SUBMIT'></a>
+</form>
+</div>
+</div>
+
+
+
+       <!-- <ul>
+          <li><a href = "#"> <img src = "like.png" width =30 hight = 30 aria-hidden = "true"><p><like></a></li>
+          <li><a href = "#"> <img src = "comment.png" width =30 hight = 30 aria-hidden = "true"></a></li>
+         <li><a href = "#"> <img src = "share.png" width =30 hight = 30 aria-hidden = "true"></a></li>
+         <li><a href = "#"> <img src = "twiter.png" width =30 hight = 30 aria-hidden = "true"></a></li>
+    
+
+
+  </ul>-->
+      
+
+
+
+   <!-- <div class="postreaction">
+    <div class="btn"><i class="fa fa-like"></i></div>
+        <div class="btn"><i class="far fa-bell"></i></i></div>
+        <div class="btn"><i class="far fa-bell"></i></div>
+        <div class="btn"><i class="far fa-bell"></i>check</div>
+        <hr>-->
+    
+{% endblock %}

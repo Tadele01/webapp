@@ -1,0 +1,37 @@
+.navigationBar {
+
+    background-color: black;
+    color: white;
+    font-size: large;
+    height: 6.25rem;
+}
+
+.navbar li {
+    color: white;
+    margin: 1rem;
+}
+.card{
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.userFeedBack {
+    position: relative;
+    left: 65%;
+    margin: 5% 5% 0;
+}
+
+.userFeedBack span  {
+    margin: 0.2rem;
+}
+.feedBackText{
+    font-size: 3rem;
+}
+.feedBackText2{
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
